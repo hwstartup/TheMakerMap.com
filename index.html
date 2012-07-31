@@ -69,9 +69,11 @@
           query: {
             select: "'Street (Address)'",
             from: '1Wjr6KMRMghEGVRskFOBWLGVGP0qfyG_mxuOoAHA'
+      //     where: "'Category Tags' IN('#electronics') AND 'Provider Tags' IN('supplier')"
           },
           map: map
         });
+        // layer10.setMap(null);
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
