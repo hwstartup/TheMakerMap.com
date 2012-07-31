@@ -7,19 +7,53 @@
 
     <link href="./css/bootstrap.css" rel="stylesheet">
     <style>
-      #map-canvas img {
-        max-width: none;
-      }
-      html, body, .container {
+      html, body {
         height: 100%;
         overflow: hidden;
+      }
+      #container {
+        top: 40px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        position: absolute;
+        padding-left: 20px;
+        padding-right: 0;
+      }
+      .row-fluid, .row-fluid .span1, .row-fluid .span2, .row-fluid .span3,
+      .row-fluid .span4, .row-fluid .span5, .row-fluid .span6,
+      .row-fluid .span7, .row-fluid .span8, .row-fluid .span9,
+      .row-fluid .span10, .row-fluid .span11, .row-fluid .span12
+      {
+        height: 100%;
+      }
+      #sidebar {
+        height:  100%;
+        padding: 20px 0;
+        overflow-y: auto;
+      }
+      #sidebar .well {
+        padding: 8px 0;
+      }
+      #sidebar input[type="text"] {
+        width: 95%;
+        margin-bottom: 0;
+      }
+      #map-wrapper {
+        border-left: 1px solid #eee;
+        border-left: 1px solid rgba(0, 0, 0, 0.05);
+
       }
       #map-canvas {
         height: 100%;
         width:  100%;
+        overflow: hidden;
+      }
+      /* fix bootstrap + gmaps */
+      #map-canvas img {
+        max-width: none;
       }
     </style>
-    <link href="./css/bootstrap-responsive.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -27,8 +61,66 @@
   </head>
 
   <body>
-    <div class="container">
-      <div id="map-canvas"></div>
+    <div id="header" class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">TheMakerMap</a>
+          <div class="pull-right">
+            <ul class="nav">
+              <li><a href="mailto:themakermap@googlegroups.com">Report an Issue</a></li>
+              <li><a href="https://groups.google.com/forum/#!forum/themakermap" target="_blank">Contribute</a></li>
+              <!-- <li><a href="#contact">About</a></li> -->
+            </ul>
+          </div>
+          <div>
+            <ul class="nav">
+              <li><a href="#addresource">Add a Resource</a></li>
+            </ul>
+          </div>
+<!--
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#map">Map</a></li>
+              <li><a href="#list">List</a></li>
+            </ul>
+          </div>
+ -->
+        </div>
+      </div>
+    </div><!--end header -->
+
+    <div id="container" class="container-fluid">
+      <div class="row-fluid">
+        <div id="sidebar" class="span2">
+          <div class="well">
+            <ul class="nav nav-list">
+              <li id="search" class="nav-header">Search</li>
+                <li><input type="text"></li>
+              <li id="business-type" class="nav-header">Business Type</li>
+                <li><label><input type="checkbox"> Foo</label></li>
+                <li><label><input type="checkbox"> Bar</label></li>
+                <li><label><input type="checkbox"> Baz</label></li>
+              <li id="tags" class="nav-header">Tags</li>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </li>
+            </ul>
+          </div>
+        </div>
+        <div id="map-wrapper" class="span10">
+          <div id="map-canvas"></div>
+        </div>
+      </div>
     </div>
 
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
