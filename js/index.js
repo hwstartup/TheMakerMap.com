@@ -23,12 +23,12 @@
      * @return {String}
      */
     function generateSearchQuery (term) {
-        var q  = term,
+        var q = term.replace(/^\s+|\s+$/g, "").replace(/'/g, '\\\'').toLowerCase();
             qp = "'Resource Name' CONTAINS IGNORING CASE '",
             qs = "'";
 
         if (q === '') return '';
-        return qp + term.toLowerCase() + qs;
+        return qp + q + qs;
     }
 
     /**
@@ -60,8 +60,6 @@
         var search  = generateSearchQuery($('#search').find('input').val()),
             filter  = generateFilterQuery(),
             and     = (search !== '' && filter !== '') ? ' AND ' : '';
-
-        console.dir(search + and + filter);
 
         return {
             select: 'Location',
