@@ -122,8 +122,27 @@
      */
     function initEventListeners () {
         // Selectors
+        $nav    = $('#topnav a');
         $search = $('#search');
         $filter = $('#filter');
+
+        // Top nav
+        $.hovertips($nav, {
+            delay_hide:     0,
+            delay_hover:    0,
+            delay_leave:    0,
+            render: function($el, data, loading) {
+                var $tooltip;
+                var self = this;
+                $tooltip = $('<div>');
+                $tooltip.addClass('nav-tooltip')
+                $tooltip.html($el.find('img').attr('alt'));
+                $el.on('click', function() {
+                    self.hide(0);
+                });
+                return $tooltip;
+            }
+        });
 
         // Search
         $search.submit(function () {
