@@ -16,45 +16,28 @@
     var map, layer;
 
     /**
-     * Generates a search query for the Google Fusion Tables API.
-     *
-     * @param {String} Search string
-     *
-     * @return {Object}
-     */
-    function generateSearchQuery (term) {
-        var q = ""
-
-        return {
-            select: 'Location',
-            from:   dataProvider,
-            where:  q
-        };
-    }
-
-    /**
      * Generates a filter query for the Google Fusion Tables API.
      *
      * @return {Object}
      */
     function generateFilterQuery () {
         var q  = '',
-            qp = "'Business Type' IN ('",
-            qs = "') OR ";
+            qp = "'Business Type' IN (",
+            qs = ")";
 
         // Build query
         $('#filter').find('input[type="checkbox"]:checked').each(function () {
-            q += qp + $(this).attr('value') + qs;
+            q += "'" + $(this).attr('value') + "', ";
         });
 
         // Trim & catch null
-        q = q.slice(0, q.length - 4);
-        if (q === '') q = "'Business Type' = 'undefined'";
+        q = q.slice(0, q.length - 2);
+        if (q === '') q = "'undefined'";
 
         return {
             select: 'Location',
             from:   dataProvider,
-            where:  q
+            where:  qp + q + qs
         };
     }
 
