@@ -18,6 +18,10 @@ h1, h2, h3, h4 {
     font-family: 'PT Sans Narrow', sans-serif;
 }
 
+input[type='checkbox'] {
+    margin: -1px 6px 0 0;
+}
+
 /**
  * ID / Segments
  */
@@ -47,6 +51,7 @@ h1, h2, h3, h4 {
 }
 
 #map-wrapper {
+    margin-left: 20px;
     border-left: 1px solid #eee;
     border-left: 1px solid rgba(0, 0, 0, 0.05);
 }
