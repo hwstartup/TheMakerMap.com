@@ -57,7 +57,6 @@
      * @return {Object}
      */
     function generateQuery () {
-        console.dir($('#search').find('input').val());
         var search  = generateSearchQuery($('#search').find('input').val()),
             filter  = generateFilterQuery(),
             and     = (search !== '' && filter !== '') ? ' AND ' : '';
