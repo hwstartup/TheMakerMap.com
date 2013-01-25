@@ -74,3 +74,11 @@ h1, h2, h3, h4 {
 #map-canvas img {
     max-width: none;
 }
+
+#modal-body {
+    min-height: 400px;
+}
+
+#modal-body h1 {
+    display: none;
+}

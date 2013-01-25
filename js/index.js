@@ -72,12 +72,23 @@
      * UI events
      */
     function initEventListeners () {
+        // Cache selectors
         var $modal = $('#modal');
 
+        // Modal
         $modal.modal({
             backdrop:   false,
             show:       false,
             remote:     formUri
+        });
+
+        $modal.on('show', function () {
+            $(this).find('head').html('');
+            $(this).find('form').submit(function () {
+                var action = $(this).attr('action');
+                console.log(action);
+                return false;
+            });
         });
     }
 
