@@ -8,6 +8,7 @@
     /**
      * Configuration
      */
+    var formUri = 'https://docs.google.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0';
 
     /**
      * Storage objects
@@ -71,7 +72,13 @@
      * UI events
      */
     function initEventListeners () {
-        
+        var $modal = $('#modal');
+
+        $modal.modal({
+            backdrop:   false,
+            show:       false,
+            remote:     formUri
+        });
     }
 
     /**

@@ -25,12 +25,11 @@
               
                     <div class="pull-right">
                         <ul class="nav">
-                            <li><a href="https://docs.google.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" target="_blank">Add a Resource</a></li>
+                            <li><a href="#modal" data-toggle="modal">Add a Resource</a></li>
                             <li><a href="https://groups.google.com/forum/#!forum/themakermap" target="_blank">Discuss</a></li>
-                            <li><a href="https://github.com/hwstartup/TheMakerMap.com/issues">Report an Issue</a></li>
-                            <!-- <li><a href="#about">About</a></li> -->
+                            <li><a href="https://github.com/hwstartup/TheMakerMap.com/issues" target="_blank">Report an Issue</a></li>
                         </ul>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </div>
@@ -43,8 +42,11 @@
                 <div id="sidebar" class="span2">
                     <div class="well">
                         <ul class="nav nav-list">
+                            <!-- Search -->
                             <li id="search" class="nav-header">Search</li>
                             <li><input type="text"></li>
+
+                            <!-- Types -->
                             <li id="business-type" class="nav-header">Business Type</li>
                             <li><label><input type="checkbox" value="retail">      Retail</label></li>
                             <li><label><input type="checkbox" value="workspace">   Workspace</label></li>
@@ -53,15 +55,6 @@
                             <li><label><input type="checkbox" value="museum ">     Museum</label></li>
                             <li><label><input type="checkbox" value="service">     Service</label></li>
                             <li><label><input type="checkbox" value="incubator">   Incubator</label></li>
-                            <!-- <li id="tags" class="nav-header">Tags</li>
-                            <li>
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -72,6 +65,16 @@
                 </div>
             
             </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">&nbsp;</h3>
+            </div>
+            
+            <div id="modal-body" class="modal-body"></div>
         </div>
 
         <!-- Scripts -->
