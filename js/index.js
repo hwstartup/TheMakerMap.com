@@ -8,11 +8,55 @@
     /**
      * Configuration
      */
+    var dataProvider = '1tteiG-HYAlsmh3ef5U-XVDEWu5QXqDxqWwDx-pc';
 
     /**
      * Storage objects
      */
     var map, layer;
+
+    /**
+     * Generates a search query for the Google Fusion Tables API.
+     *
+     * @param {String} Search string
+     *
+     * @return {Object}
+     */
+    function generateSearchQuery (term) {
+        var q = ""
+
+        return {
+            select: 'Location',
+            from:   dataProvider,
+            where:  q
+        };
+    }
+
+    /**
+     * Generates a filter query for the Google Fusion Tables API.
+     *
+     * @return {Object}
+     */
+    function generateFilterQuery () {
+        var q  = '',
+            qp = "'Business Type' IN ('",
+            qs = "') OR ";
+
+        // Build query
+        $('#filter').find('input[type="checkbox"]:checked').each(function () {
+            q += qp + $(this).attr('value') + qs;
+        });
+
+        // Trim & catch null
+        q = q.slice(0, q.length - 4);
+        if (q === '') q = "'Business Type' = 'undefined'";
+
+        return {
+            select: 'Location',
+            from:   dataProvider,
+            where:  q
+        };
+    }
 
     /**
      * Google Maps
@@ -58,12 +102,8 @@
         map.setMapTypeId('map-style');
 
         layer = new google.maps.FusionTablesLayer({
-            query: {
-                select: 'Location',
-                from:   '1tteiG-HYAlsmh3ef5U-XVDEWu5QXqDxqWwDx-pc',
-                // where: '\'Category Tags\' IN(\'#electronics\') AND \'Provider Tags\' IN(\'supplier\')'
-            },
-            map: map
+            query:  generateFilterQuery(),
+            map:    map
         });
     }
 
@@ -71,7 +111,19 @@
      * UI events
      */
     function initEventListeners () {
-        
+        // Selectors
+        $search = $('#search');
+        $filter = $('#filter');
+
+        // Search
+        $search.submit(function () {
+            return false;
+        });
+
+        // Filter
+        $filter.find('input').click(function () {
+            layer.setQuery(generateFilterQuery());
+        });
     }
 
     /**
