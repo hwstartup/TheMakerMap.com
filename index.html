@@ -1,131 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>TheMakerMap</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="utf-8">
+        <title>The Maker Map</title>
 
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
 
-  <body>
-    <div id="header" class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="brand" href="/">TheMakerMap</a>
-          <div class="pull-right">
-            <ul class="nav">
-              <li><a href="https://docs.google.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" target="_blank">Add a Resource</a></li>
-              <li><a href="https://groups.google.com/forum/#!forum/themakermap" target="_blank">Discuss</a></li>
-              <li><a href="mailto:themakermap@googlegroups.com">Report an Issue</a></li>
-              <!-- <li><a href="#about">About</a></li> -->
-            </ul>
-          </div>
-          <div>
-            <ul class="nav">
-              <!-- <li><a href="#addresource">Add a Resource</a></li> -->
-            </ul>
-          </div>
-<!--
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="#map">Map</a></li>
-              <li><a href="#list">List</a></li>
-            </ul>
-          </div>
- -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        
+        <!-- Header -->
+        <div id="header" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="brand" href="/">The Maker Map</a>
+              
+                    <div class="pull-right">
+                        <ul class="nav">
+                            <li><a href="https://docs.google.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" target="_blank">Add a Resource</a></li>
+                            <li><a href="https://groups.google.com/forum/#!forum/themakermap" target="_blank">Discuss</a></li>
+                            <li><a href="https://github.com/hwstartup/TheMakerMap.com/issues" target="_blank">Report an Issue</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div><!--end header -->
 
-    <div id="container" class="container-fluid">
-      <div class="row-fluid">
-        <div id="sidebar" class="span2">
-          <div class="well" style="padding: 0.5em 1em">Awesome new features, coming soon :)</div>
-<!--
-          <div class="well">
-            <ul class="nav nav-list">
-              <li id="search" class="nav-header">Search</li>
-                <li><input type="text"></li>
-              <li id="business-type" class="nav-header">Business Type</li>
-                <li><label><input type="checkbox" value="retail">      Retail</label></li>
-                <li><label><input type="checkbox" value="workspace">   Workspace</label></li>
-                <li><label><input type="checkbox" value="fabricator">  Fabricator</label></li>
-                <li><label><input type="checkbox" value="distributor"> Distributor</label></li>
-                <li><label><input type="checkbox" value="museum ">     Museum</label></li>
-                <li><label><input type="checkbox" value="service">     Service</label></li>
-                <li><label><input type="checkbox" value="incubator">   Incubator</label></li>
-              <li id="tags" class="nav-header">Tags</li>
-                <li>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </li>
-            </ul>
-          </div>
--->
-        </div>
-        <div id="map-wrapper" class="span10">
-          <div id="map-canvas"></div>
-        </div>
-      </div>
-    </div>
+        <!-- Container -->
+        <div id="container" class="container-fluid">
+            <div class="row-fluid">
+            
+                <!-- Sidebar -->
+                <div id="sidebar" class="span2">
+                    <div class="well">
+                        <ul class="nav nav-list">
+                            <!-- Search -->
+                            <form id="search">
+                                <li class="nav-header">Search</li>
+                                <li><input type="text"></li>
+                            </form>
 
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript">
-      var map;
-      var layerl0;
-      function initialize() {
-        map = new google.maps.Map(document.getElementById('map-canvas'), {
-          center: new google.maps.LatLng(37.65, -122.25),
-          zoom: 10,
-          disableDefaultUI: true,
-          zoomControl: true,
-          streetViewControl: true
-        });
-        var style = [
-          {
-            featureType: 'all',
-            elementType: 'all',
-            stylers: [
-              { saturation: -79 }
-            ]
-          },
-          {
-            featureType: 'administrative.land_parcel',
-            elementType: 'all',
-            stylers: [
-              { visibility: 'off' }
-            ]
-          }
-        ];
-        var styledMapType = new google.maps.StyledMapType(style, {
-          map: map,
-          name: 'Styled Map'
-        });
-        map.mapTypes.set('map-style', styledMapType);
-        map.setMapTypeId('map-style');
-        layerl0 = new google.maps.FusionTablesLayer({
-          query: {
-            select: "Location",
-            from: '1tteiG-HYAlsmh3ef5U-XVDEWu5QXqDxqWwDx-pc'
-      //     where: "'Category Tags' IN('#electronics') AND 'Provider Tags' IN('supplier')"
-          },
-          map: map
-        });
-        // layer10.setMap(null);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-  </body>
+                            <!-- Types -->
+                            <form id="filter">
+                                <li class="nav-header">Business Type</li>
+                                <li><label><input type="checkbox" checked="checked" value="retail">Retail</label></li>
+                                <li><label><input type="checkbox" checked="checked" value="workspace">Workspace</label></li>
+                                <li><label><input type="checkbox" checked="checked" value="fabricator">Fabricator</label></li>
+                                <li><label><input type="checkbox" checked="checked" value="distributor">Distributor</label></li>
+                                <li><label><input type="checkbox" checked="checked" value="museum">Museum</label></li>
+                                <li><label><input type="checkbox" checked="checked" value="service">Service</label></li>
+                                <li><label><input type="checkbox" checked="checked" value="incubator">Incubator</label></li>
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div id="map-wrapper" class="span10">
+                    <div id="map-canvas"></div>
+                </div>
+            
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+
+        <script src="./js/index.js"></script>
+    </body>
 </html>
