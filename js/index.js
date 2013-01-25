@@ -16,28 +16,58 @@
     var map, layer;
 
     /**
-     * Generates a filter query for the Google Fusion Tables API.
+     * Generates a search query.
      *
-     * @return {Object}
+     * @param {String} Search term
+     *
+     * @return {String}
+     */
+    function generateSearchQuery (term) {
+        var q  = term,
+            qp = "'Resource Name' CONTAINS IGNORING CASE '",
+            qs = "'";
+
+        if (q === '') return '';
+        return qp + term.toLowerCase() + qs;
+    }
+
+    /**
+     * Generates a filter query.
+     *
+     * @return {String}
      */
     function generateFilterQuery () {
-        var q  = '',
+        var q  = "",
             qp = "'Business Type' IN (",
             qs = ")";
 
-        // Build query
         $('#filter').find('input[type="checkbox"]:checked').each(function () {
             q += "'" + $(this).attr('value') + "', ";
         });
 
-        // Trim & catch null
         q = q.slice(0, q.length - 2);
-        if (q === '') q = "'undefined'";
+        if (q === '') return '';
+
+        return qp + q + qs;
+    }
+
+    /**
+     * Generates query object for the Google Fusion Tables API.
+     *
+     * @return {Object}
+     */
+    function generateQuery () {
+        console.dir($('#search').find('input').val());
+        var search  = generateSearchQuery($('#search').find('input').val()),
+            filter  = generateFilterQuery(),
+            and     = (search !== '' && filter !== '') ? ' AND ' : '';
+
+        console.dir(search + and + filter);
 
         return {
             select: 'Location',
             from:   dataProvider,
-            where:  qp + q + qs
+            where:  search + and + filter
         };
     }
 
@@ -85,7 +115,7 @@
         map.setMapTypeId('map-style');
 
         layer = new google.maps.FusionTablesLayer({
-            query:  generateFilterQuery(),
+            query:  generateQuery(),
             map:    map
         });
     }
@@ -103,9 +133,13 @@
             return false;
         });
 
+        $search.find('input').keyup(function () {
+            layer.setQuery(generateQuery());
+        });
+
         // Filter
         $filter.find('input').click(function () {
-            layer.setQuery(generateFilterQuery());
+            layer.setQuery(generateQuery());
         });
     }
 
