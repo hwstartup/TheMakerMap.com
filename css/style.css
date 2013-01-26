@@ -87,3 +87,7 @@ input[type='checkbox'] {
 #modal-body h1 {
     display: none;
 }
+
+.any-filter {
+    font-style: italic;
+}
