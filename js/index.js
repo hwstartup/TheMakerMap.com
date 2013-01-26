@@ -74,7 +74,7 @@
     function initMaps () {
         map = new google.maps.Map(document.getElementById('map-canvas'), {
             center: new google.maps.LatLng(37.65, -122.25),
-            zoom: 10,
+            zoom: 9,
             disableDefaultUI: true,
             zoomControl: true,
             streetViewControl: true
@@ -144,8 +144,27 @@
      */
     function initEventListeners () {
         // Selectors
+        var $nav    = $('#topnav a');
         var $search = $('#search');
         var $filter = $('#filter');
+
+        // Top nav
+        $.hovertips($nav, {
+            delay_hide:     0,
+            delay_hover:    0,
+            delay_leave:    0,
+            render: function($el, data, loading) {
+                var $tooltip;
+                var self = this;
+                $tooltip = $('<div>');
+                $tooltip.addClass('nav-tooltip')
+                $tooltip.html($el.find('img').attr('alt'));
+                $el.on('click', function() {
+                    self.hide(0);
+                });
+                return $tooltip;
+            }
+        });
 
         // Search
         $search.submit(function () {
