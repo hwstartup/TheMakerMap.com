@@ -18,6 +18,19 @@ h1, h2, h3, h4, .brand {
     font-family: 'PT Sans Narrow', sans-serif;
 }
 
+input[type='text'] {
+    width: 468px;
+    padding: 6px;
+
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    background-image: url(/img/gra_search_background.gif);
+    background-repeat: no-repeat;
+    background-position: 450px 5px;
+}
+
 input[type='checkbox'] {
     margin: -1px 6px 0 0;
 }
@@ -40,7 +53,23 @@ input[type='checkbox'] {
 }
 
 #controls {
+    padding: 24px 0px;
     background-color: #368ecf;
+}
+
+#filter {
+    padding: 12px 4px;
+    text-align: left;
+}
+
+#filter label {
+    display: block;
+    float: left;
+    width: 25%;
+
+    color: white;
+    font-size: 0.9em;
+    font-weight: normal;
 }
 
 .band {
@@ -83,6 +112,16 @@ input[type='checkbox'] {
 
     color: white;
     font-size: 48px;
+    text-transform: uppercase;
+}
+
+.subhead {
+    display: inline-block;
+    width: 100%;
+
+    color: white;
+    font-size: 12px;
+    font-weight: normal;
     text-transform: uppercase;
 }
 
