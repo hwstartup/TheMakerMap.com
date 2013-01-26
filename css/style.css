@@ -1,0 +1,93 @@
+/**
+ * Style definitions.
+ *
+ * @package themakermap
+ */
+
+/**
+ * Tags
+ */
+html, body {
+    height: 100%;
+    overflow: hidden;
+
+    font-family: 'PT Sans', sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+input[type='checkbox'] {
+    margin: -1px 6px 0 0;
+}
+
+/**
+ * ID / Segments
+ */
+#container {
+    top: 40px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: absolute;
+    padding-left: 20px;
+    padding-right: 0;
+}
+
+#sidebar {
+    height:  100%;
+    padding: 20px 0;
+    overflow-y: auto;
+}
+
+#sidebar .well {
+    padding: 8px 0;
+}
+
+#sidebar input[type="text"] {
+    width: 95%;
+    margin-bottom: 0;
+}
+
+#map-wrapper {
+    margin-left: 20px;
+    border-left: 1px solid #eee;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#map-canvas {
+    height: 100%;
+    width:  100%;
+    overflow: hidden;
+}
+
+/**
+ * Classes / helpers
+ */
+
+/**
+ * Bootstrap overrides
+ */
+.row-fluid, .row-fluid .span1, .row-fluid .span2, .row-fluid .span3,
+.row-fluid .span4, .row-fluid .span5, .row-fluid .span6,
+.row-fluid .span7, .row-fluid .span8, .row-fluid .span9,
+.row-fluid .span10, .row-fluid .span11, .row-fluid .span12 {
+    height: 100%;
+}
+
+#map-canvas img {
+    max-width: none;
+}
+
+#modal-body {
+    min-height: 400px;
+}
+
+#modal-body h1 {
+    display: none;
+}
+
+.any-filter {
+    font-style: italic;
+}

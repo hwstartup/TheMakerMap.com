@@ -117,14 +117,36 @@
         });
     }
 
+    function updateAnyCheckbox (e) {
+        var $target = $(e.target);
+        var $boxen = $('#filter').find('input[type="checkbox"]').not('[value="any"]');
+        var $any   = $('#filter').find('input[value="any"]');
+
+        if ($target.val() == 'any') {
+            // update other checkboxes based on "any" state
+            if ($any.is(':checked')) {
+                $boxen.prop('checked', 'checked');
+            } else {
+                $boxen.removeAttr('checked');
+            }
+        } else {
+            // update "any" checkbox based on others' state
+            if ($boxen.not(':checked').length) {
+                $any.removeAttr('checked');
+            } else {
+                $any.prop('checked', 'checked');
+            }
+        }
+    }
+
     /**
      * UI events
      */
     function initEventListeners () {
         // Selectors
-        $nav    = $('#topnav a');
-        $search = $('#search');
-        $filter = $('#filter');
+        var $nav    = $('#topnav a');
+        var $search = $('#search');
+        var $filter = $('#filter');
 
         // Top nav
         $.hovertips($nav, {
@@ -154,7 +176,8 @@
         });
 
         // Filter
-        $filter.find('input').click(function () {
+        $filter.find('input').click(function (e) {
+            updateAnyCheckbox(e);
             layer.setQuery(generateQuery());
         });
     }
