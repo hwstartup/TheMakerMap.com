@@ -1,0 +1,156 @@
+/**
+ * Main stylesheet.
+ *
+ * @package themakermap
+ */
+
+/**
+ * Import
+ */
+@import "normalize.less";
+
+/**
+ * Colors & typography
+ */
+@black:             #000;
+@white:             #fff;
+@primary:           #3da1e9;
+@shadow:            #368ecf;
+
+@font-primary:      'PT Sans', sans-serif;
+@font-secondary:    'PT Sans Narrow', sans-serif;
+
+/**
+ * Tags
+ */
+html, body {
+    height: 100%;
+    overflow: hidden;
+
+    font-family: @font-primary;
+}
+
+h1, h2, h3, h4, .brand {
+    font-family: @font-secondary;
+}
+
+input[type='text'] {
+    width: 468px;
+    padding: 6px;
+
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    background-image: url(/img/gra_search_background.gif);
+    background-repeat: no-repeat;
+    background-position: 450px 5px;
+}
+
+input[type='checkbox'] {
+    margin: -1px 6px 0 0;
+}
+
+/**
+ * Header & navigation
+ */
+#header {
+    background-color: @primary;
+}
+
+#topnav {
+    width: 148px;
+    margin: 22px 0 0 -172px;
+}
+
+#topnav a {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#controls {
+    padding: 24px 0px;
+    background-color: @shadow;
+}
+
+#filter {
+    padding: 12px 4px;
+    text-align: left;
+}
+
+#filter label {
+    display: block;
+    float: left;
+    width: 25%;
+
+    color: white;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.band {
+    position: relative;
+    width: 100%;
+    padding: 12px 0px;
+    text-align: center;
+}
+
+.container {
+    display: inline-block;
+    width: 480px;
+    text-align: center;
+}
+
+/**
+ * Map
+ */
+#map-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+#map-canvas {
+    height: 100%;
+    width:  100%;
+    overflow: hidden;
+}
+
+#map-canvas img {
+    max-width: none;
+}
+
+/**
+ * Typography
+ */
+.brand {
+    margin: 0px;
+    padding: 0px;
+
+    color: white;
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+.subhead {
+    display: inline-block;
+    width: 100%;
+
+    color: white;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+/**
+ * Helpers
+ */
+.pull-right {
+    position: absolute;
+    top: 0px;
+    left: 100%;
+}
+
+.nav-tooltip {
+    color: white;
+    font-size: 0.75em;
+}
