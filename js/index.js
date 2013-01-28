@@ -16,6 +16,45 @@
     var map, layer;
 
     /**
+     * Window rendering handler.
+     */
+    function render () {
+        var $map    = $('#map-wrapper');
+        var calc    = $(window).height() - $map.position().top;
+
+        $map.css('height', calc + 'px');
+    }
+
+    /**
+     * Event handler for checkbox controls.
+     *
+     * @param {Object} Event
+     *
+     * @return {void}
+     */
+    function updateAnyCheckbox (e) {
+        var $target = $(e.target);
+        var $boxen  = $('#filter').find('input[type="checkbox"]').not('[value="any"]');
+        var $any    = $('#filter').find('input[value="any"]');
+
+        if ($target.val() == 'any') {
+            // Update other checkboxes based on "any" state
+            if ($any.is(':checked')) {
+                $boxen.prop('checked', 'checked');
+            } else {
+                $boxen.removeAttr('checked');
+            }
+        } else {
+            // Update "any" checkbox based on others' state
+            if ($boxen.not(':checked').length) {
+                $any.removeAttr('checked');
+            } else {
+                $any.prop('checked', 'checked');
+            }
+        }
+    }
+
+    /**
      * Generates a search query.
      *
      * @param {String} Search term
@@ -117,36 +156,18 @@
         });
     }
 
-    function updateAnyCheckbox (e) {
-        var $target = $(e.target);
-        var $boxen = $('#filter').find('input[type="checkbox"]').not('[value="any"]');
-        var $any   = $('#filter').find('input[value="any"]');
-
-        if ($target.val() == 'any') {
-            // update other checkboxes based on "any" state
-            if ($any.is(':checked')) {
-                $boxen.prop('checked', 'checked');
-            } else {
-                $boxen.removeAttr('checked');
-            }
-        } else {
-            // update "any" checkbox based on others' state
-            if ($boxen.not(':checked').length) {
-                $any.removeAttr('checked');
-            } else {
-                $any.prop('checked', 'checked');
-            }
-        }
-    }
-
     /**
      * UI events
      */
     function initEventListeners () {
         // Selectors
+        var $window = $(window);
         var $nav    = $('#topnav a');
         var $search = $('#search');
         var $filter = $('#filter');
+
+        // Resize handler
+        $window.resize(render);
 
         // Top nav
         $.hovertips($nav, {
@@ -185,6 +206,7 @@
     /**
      * On load, init maps & start listening for UI events
      */
+    render();
     initMaps();
     initEventListeners();
 
