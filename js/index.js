@@ -154,6 +154,15 @@
             query:  generateQuery(),
             map:    map
         });
+
+
+        if (navigator && navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                map.setCenter(latlng);
+                map.setZoom(12);
+            });
+        }
     }
 
     /**
