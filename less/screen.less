@@ -8,6 +8,7 @@
  * Import
  */
 @import "normalize.less";
+@import "font-awesome.less";
 
 /**
  * Colors & typography
@@ -120,7 +121,7 @@ body {
 }
 
 .aboutWrap {
-    display: none;
+	display: none;
 }
 
 .about {
@@ -229,7 +230,7 @@ a.btn {
 	color:@white;
 	text-decoration:none;
 	font-size: 0.9em;
-	padding: 38px 10px 8px;
+	padding: 12px 10px 8px;
 	display:inline-block;
 	border-color:#0082C8;
 	border-style:solid;
@@ -254,7 +255,7 @@ a.btn-large.addResource {
 	z-index:2;
 	bottom:30px;
 	left:40%;
-	width:280px;
+	width: 240px;
 	padding:24px 20px 18px;
 	font-size:1.8em;
 	text-align:left;
@@ -266,6 +267,15 @@ a.btn-large.addResource {
 	margin: 0 2% 0 0;
 }
 
+a.btn [class^="icon-"],a.btn [class*=" icon-"] {
+	font-size:1.8em;
+}
+
+a.btn-large [class^="icon-"],a.btn-large [class*=" icon-"] {
+	font-size:1.2em;
+}
+
+
 .mapActions a.btn {
 	width: 21.5%;
 	margin: 0 0.5%;
@@ -275,15 +285,17 @@ a.btn-large.addResource {
 	background: @white;
 	color: #dedede;
 	font-size: 1.5em;
+	line-height: 2.7em;
 	text-align: left;
-	padding: 20px 15px 17px;
+	padding: 0 15px 0;
+	height: 2.6em;
+	line-height: 2.7em;
 	border-color:#0082C8;
 	border-style:solid;
 	border-width:1px;
 	cursor:pointer;
 	width: 75%;
 	margin: 0 auto 2%;
-	line-height: 1em;
 	position: relative;
 	.rounded-corners;
 	.animate;
@@ -293,8 +305,12 @@ a.btn-large.addResource {
 	color:#162640;
 }
 
+.searchBtn [class^="icon-"],.searchBtn [class*="icon-"] {
+	font-size:1.2em;
+}
+
 .locateMe {
-	background: @white url(../img/locateMe.png) no-repeat 8px 11px;	
+	background: @white;	
 	height:40px;
 	width:40px;
 	position:absolute;
@@ -302,12 +318,21 @@ a.btn-large.addResource {
 	bottom:30px;
 	left:10px;
 	cursor:pointer;
+	text-align:center;
+	display:table;
 	.rounded-corners;
 	.shadow;
 }
 
-.locateMe.active {
-	background-position-y:-39px;
+.locateMe [class^="icon-"],.locateMe [class*="icon-"]{
+	color:#c1c1c1;
+	font-size: 1.5em;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.locateMe.active [class^="icon-"],.locateMe.active [class*="icon-"] {
+	color:@lightBlue;
 }
 
 .menuToggle {
@@ -316,14 +341,19 @@ a.btn-large.addResource {
 
 /* icons */
 
-.icon-search {
-	background: @white url(../img/gra_search_background.gif) no-repeat center center;
+.searchAction {
 	height: 100%;
 	width: 40px;
-	display: block;
+	display: table;
 	position: absolute;
 	top: 0;
 	right: 0;
 }
 
+.icon-search {
+	color: @lightBlue;
+	font-size: 1.5em;
+	vertical-align: middle;
+	display: table-cell;
+}
 
