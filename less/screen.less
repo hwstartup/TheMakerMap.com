@@ -12,144 +12,318 @@
 /**
  * Colors & typography
  */
+
 @black:             #000;
 @white:             #fff;
-@primary:           #3da1e9;
-@shadow:            #368ecf;
+@darkBlue:					#162640;
+@lightBlue:					#0082C8;
 
 @font-primary:      'PT Sans', sans-serif;
 @font-secondary:    'PT Sans Narrow', sans-serif;
 
 /**
- * Tags
+ * Shadows, Transitions & Borders
  */
-html, body {
-    height: 100%;
-    overflow: hidden;
-    font-family: @font-primary;
+
+.shadowInset (@insetShadow: inset 0px 0px 1px 1px rgba(0, 0, 0, .3)) {
+	-webkit-box-shadow: @insetShadow;
+	box-shadow: @insetShadow;
 }
 
-h1, h2, h3, h4, .brand {
-    font-family: @font-secondary;
+.shadow (@regShadow: 0px 0px 3px 1px rgba(0, 0, 0, .4)) {
+	-webkit-box-shadow: @regShadow;
+	box-shadow: @regShadow;
 }
 
-input[type='text'] {
-    width: 468px;
-    padding: 6px;
-
-    font-size: 18px;
-    border: none;
-    outline: none;
-    border-radius: 2px;
-    background-image: url(/img/gra_search_background.gif);
-    background-repeat: no-repeat;
-    background-position: 450px 5px;
+.rounded-corners (@radius: 3px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
 }
 
-input[type='checkbox'] {
-    margin: -1px 6px 0 0;
+.animate (@transitions: all 0.2s ease) {
+  -webkit-transition: @transitions;
+	-moz-transition: @transitions;
+	-o-transition: @transitions;
+	transition: @transitions;
 }
+
 
 /**
- * Header & navigation
+ * Start CSS
  */
-#header {
-    background-color: @primary;
+
+html{
+	font-family:@font-primary;
+	-webkit-text-size-adjust:100%;
+	-ms-text-size-adjust:100%;
 }
 
-#topnav {
-    width: 148px;
-    margin: 22px 0 0 -172px;
+body {
+	margin:0;
+	padding:0;
 }
 
-#topnav a {
-    display: inline-block;
-    margin-left: 10px;
+#map-wrapper{
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index:1;
+	top:0;
+	left:0;
 }
 
-#controls {
-    padding: 24px 0px;
-    background-color: @shadow;
+#map-canvas{
+	height:100%;
+	width:100%;
+	overflow:hidden;
+}
+
+#map-canvas img{
+	max-width:none;
+}
+
+#controlWrap {
+	background-color: @darkBlue;
+	color: @white;
+	width: 95%;
+	margin: 0 auto;
+	top: 10px;
+	position: absolute;
+	max-width: 280px;
+	left: 10px;
+	z-index: 3;
+	.shadow;
+}
+
+.header {
+	text-align: center;
+	padding: 20px 0 15px;
+	border-bottom: 1px solid #1E3F60;
+	font-family:@font-secondary;
+}
+
+.brand {
+	font-size: 2.5em;
+	line-height: 1em;
+}
+
+.menu-toggle {
+	
+}
+
+.menu {
+	text-align: center;
+	padding: 10px 0;
+}
+
+.aboutWrap {
+    display: none;
+}
+
+.about {
+	text-align: center;
+	padding: 20px 0;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.about h1{
+	font-size: 1.3em;
+	margin: 0 0 5px;
+	line-height: 1em;
+	text-transform: uppercase;
+}
+
+.about h2{
+	line-height: 1em;
+	margin: 0;
+	font-size: 1.2em;
+	font-weight: 300;
+}
+
+.about p {
+	font-size: 1em;
+	line-height: 1.3em;
+	margin: 1em 0;
+}
+
+.mapActions {
+	
+}
+
+.footer {
+	padding: 20px;
+}
+
+
+/* filters */
+
+.filterWrap {
+	
+}
+
+.filterHeader {
+	margin: 0 auto;
+	padding: 8px 10px;
+	font-size: 0.8em;
 }
 
 #filter {
-    padding: 12px 4px;
-    text-align: left;
+	
 }
 
-#filter label {
-    display: block;
-    float: left;
-    width: 25%;
-
-    color: white;
-    font-size: 0.9em;
-    font-weight: normal;
+ul.filters {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 
-.band {
-    position: relative;
-    width: 100%;
-    padding: 12px 0px;
-    text-align: center;
+ul.filters li {
+	padding: 10px 10px 8px;
+	background-color: #F6F6F6;
+	color: @darkBlue;
+	font-weight: 600;
+	border-bottom: 1px solid #DEDEDE;
+	cursor: pointer;
+	.animate;
 }
 
-.container {
-    display: inline-block;
-    width: 480px;
-    text-align: center;
+ul.filters li:hover {
+	background-color:@white;
 }
 
-/**
- * Map
- */
-#map-wrapper {
-    width: 100%;
-    height: 100%;
+ul.filters li label input[type="checkbox"] {
+	float: right;
+	margin: 4px 0;
+	padding: 0;
 }
 
-#map-canvas {
-    height: 100%;
-    width:  100%;
-    overflow: hidden;
+/* search */
+
+.searchWrap {
+	background: @white;
+	height: 60px;
+	overflow: hidden;
+	position: relative;
 }
 
-#map-canvas img {
-    max-width: none;
+#search input[type="text"] {
+	width: 94%;
+	font-family:@font-primary;
+	margin: 0 auto;
+	border: none;
+	font-size: 1.5em;
+	padding: 16px 0 12px;
+	display: block;
+	font-weight: 300;
+	outline:none;
 }
 
-/**
- * Typography
- */
-.brand {
-    margin: 0px;
-    padding: 0px;
+/* btns */
 
-    color: white;
-    font-size: 48px;
-    text-transform: uppercase;
+a.btn {
+	background-color:#0082C8;
+	color:@white;
+	text-decoration:none;
+	font-size: 0.9em;
+	padding: 38px 10px 8px;
+	display:inline-block;
+	border-color:#0082C8;
+	border-style:solid;
+	border-width:1px;
+	width: 35%;
+	text-align: center;
+	.animate;
+	.rounded-corners;
 }
 
-.subhead {
-    display: inline-block;
-    width: 100%;
-
-    color: white;
-    font-size: 12px;
-    font-weight: normal;
-    text-transform: uppercase;
+a.btn:hover {
+	.shadowInset;
 }
 
-/**
- * Helpers
- */
-.pull-right {
-    position: absolute;
-    top: 0px;
-    left: 100%;
+a.btn:active {
+	-webkit-box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, .45);
+	box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, .45);
 }
 
-.nav-tooltip {
-    color: white;
-    font-size: 0.75em;
+a.btn-large.addResource {
+	position:absolute;
+	z-index:2;
+	bottom:30px;
+	left:40%;
+	width:280px;
+	padding:24px 20px 18px;
+	font-size:1.8em;
+	text-align:left;
+	-webkit-box-shadow: 0px 0px 0px 6px rgba(255,255,255, .45);
+	box-shadow: 0px 0px 0px 6px rgba(255,255,255, .45);
 }
+
+.menu a.btn.addResource {
+	margin: 0 2% 0 0;
+}
+
+.mapActions a.btn {
+	width: 21.5%;
+	margin: 0 0.5%;
+}
+
+.searchBtn {
+	background: @white;
+	color: #dedede;
+	font-size: 1.5em;
+	text-align: left;
+	padding: 20px 15px 17px;
+	border-color:#0082C8;
+	border-style:solid;
+	border-width:1px;
+	cursor:pointer;
+	width: 75%;
+	margin: 0 auto 2%;
+	line-height: 1em;
+	position: relative;
+	.rounded-corners;
+	.animate;
+}
+
+.searchBtn:hover {
+	color:#162640;
+}
+
+.locateMe {
+	background: @white url(../img/locateMe.png) no-repeat 8px 11px;	
+	height:40px;
+	width:40px;
+	position:absolute;
+	z-index:2;
+	bottom:30px;
+	left:10px;
+	cursor:pointer;
+	.rounded-corners;
+	.shadow;
+}
+
+.locateMe.active {
+	background-position-y:-39px;
+}
+
+.menuToggle {
+	display:none;
+}
+
+/* icons */
+
+.icon-search {
+	background: @white url(../img/gra_search_background.gif) no-repeat center center;
+	height: 100%;
+	width: 40px;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+

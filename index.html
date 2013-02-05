@@ -1,76 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Maker Map</title>
-
-        <meta name="viewport" content="width=520,user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-
-        <link rel="stylesheet" href="./css/screen.css">
-        <link rel="stylesheet" href="./css/phone.css" media="only screen and (max-device-width: 480px)">
-        <link rel="stylesheet" href="./css/tablet.css" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)">
-        <link href="http://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css">
-
-        <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-    </head>
-
-    <body>
-        
-        <!-- Header -->
-        <div id="header" class="band">
-            <div class="container">
-                <span class="brand">The <strong>Maker</strong> Map</span>
-            </div>
-
-            <div id="topnav" class="pull-right">
-                <a href="https://docs.google.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" target="_blank">
-                    <img src="./img/ui_topnav_add.gif" width="36" height="36" alt="Add A Resource" />
-                </a>
-                <a href="https://groups.google.com/forum/#!forum/themakermap" target="_blank">
-                    <img src="./img/ui_topnav_discuss.gif" width="36" height="36" alt="Discuss" />
-                </a>
-                <a href="https://github.com/hwstartup/TheMakerMap.com/issues" target="_blank">
-                    <img src="./img/ui_topnav_source.gif" width="36" height="36" alt="Source" />
-                </a>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <div id="controls" class="band">
-            <div class="container">
-                <!-- Search -->
-                <form id="search">
-                    <input type="text" placeholder="Search...">
-                </form>
-
-                <!-- Types -->
-                <form id="filter">
-                    <span class="subhead">Filter By Business Type</span>
-                    <label class="any-filter"><input type="checkbox" checked="checked" value="any">Any</label>
-                    <label><input type="checkbox" checked="checked" value="retail">Retail</label>
-                    <label><input type="checkbox" checked="checked" value="workspace">Workspace</label>
-                    <label><input type="checkbox" checked="checked" value="fabricator">Fabricator</label>
-                    <label><input type="checkbox" checked="checked" value="distributor">Distributor</label>
-                    <label><input type="checkbox" checked="checked" value="museum">Museum</label>
-                    <label><input type="checkbox" checked="checked" value="service">Service</label>
-                    <label><input type="checkbox" checked="checked" value="incubator">Incubator</label>
-                </form>
-            </div>
-        </div>
-
-        <!-- Map -->
-        <div id="map-wrapper">
-            <div id="map-canvas"></div>
-        </div>
-
-        <!-- Scripts -->
-        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-        <script src="./js/jquery.min.js"></script>
-        <script src="./js/jquery.hovertips.js"></script>
-
-        <script src="./js/index.js"></script>
-    </body>
+	<head>
+		<meta charset="utf-8">
+		<title>Maker Map</title>
+		<meta name="viewport" content="width=520,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="stylesheet" href="./css/screen.css">
+		<link rel="stylesheet" href="./css/phone.css" media="only screen and (max-device-width: 480px)">
+		<link rel="stylesheet" href="./css/tablet.css" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)">
+		<link href="http://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css">
+		
+		<!--[if lt IE 9]>
+		 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+	</head>
+	<body>
+		
+		<div id="controlWrap">
+		
+			<div class="header">
+				<span class="brand">THE <b>MAKER</b> MAP</span>
+				<button class="menuToggle">m</button>
+			</div><!-- .header -->
+		
+			<div class="menu">
+				<a href="https://docs.google.com/a/launchrock.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="btn addResource" title="Add a Resource">Add a Resource</a>
+				<a href="JavaScript:void(0);" class="btn aboutMap" title="About the Map">About the Map</a>
+			</div><!-- .menu -->
+		
+			<div class="aboutWrap">
+				<div class="about">
+					<h1>FIND OR MAP A RESOURCE</h1>
+					<h2>Join the Maker Movement</h2>
+					<p>The Maker Map is an ongoing open source project which aims to create a global maker resources database - from workspaces to incubators - which is powered by the maker community and easily searchable on any device.</p> 
+					<p>If you would like to help you can start by mapping a resource, joining the project discussion or checking out the map source on github.</p>
+					<div class="searchBtn">
+						Search...
+						<i class="icon-search"></i>
+					</div>
+					<div class="mapActions">
+						<a href="https://docs.google.com/a/launchrock.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="btn addResource" title="Add a Resource"  target="_blank">Add a Resource</a>
+						<a href="https://groups.google.com/forum/#!forum/themakermap" class="btn discussProject" title="Discuss the Project"  target="_blank">Discuss</a>
+						<a href="https://github.com/hwstartup/TheMakerMap.com/issues?state=open" class="btn mapSource" title="View the Map Source" target="_blank">Map Source</a>
+					</div>
+				</div><!-- .about -->
+			</div><!-- .aboutWrap -->
+			<div class="searchWrap">
+				<form id="search">
+					<input type="text" placeholder="Search...">
+	      </form>
+				<i class="icon-search"></i>
+			</div><!-- .searchWrap -->
+		
+			<div class="filterWrap">
+				<div class="filterHeader">Filter By Business Type <div class="tip-filter"></div></div>
+				<form id="filter">
+					<ul class="filters">
+	          <li><label class="any-filter">Any<input type="checkbox" checked="checked" value="any"></label></li>
+	          <li><label>Retail<input type="checkbox" checked="checked" value="retail"></label></li>
+	          <li><label>Workspace<input type="checkbox" checked="checked" value="workspace"></label></li>
+	          <li><label>Fabricator<input type="checkbox" checked="checked" value="fabricator"></label></li>
+	          <li><label>Distributor<input type="checkbox" checked="checked" value="distributor"></label></li>
+	          <li><label>Museum<input type="checkbox" checked="checked" value="museum"></label></li>
+	          <li><label>Service<input type="checkbox" checked="checked" value="service"></label></li>
+	          <li><label>Incubator<input type="checkbox" checked="checked" value="incubator"></label></li>
+					</ul>
+	      </form>
+			</div><!-- .filterWrap -->
+		
+			<div class="footer">
+				<!--a href="https://twitter.com/share" class="twitter-share-button" data-url="http://themakermap.com">Tweet</a-->
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				<!--iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fthemakermap.com&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=203095866422738" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe-->
+			</div>
+	
+	
+		</div><!-- #controlWrap -->
+	
+		<div class="locateMe"><i class="icon-locate"></i></div>
+		<a href="https://docs.google.com/a/launchrock.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="btn btn-large addResource" title="Add a Resource">Add a Resource</a>
+		
+		<!-- Map -->
+	  <div id="map-wrapper">
+	      <div id="map-canvas"></div>
+	  </div>	
+	
+		<!-- Scripts -->
+		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/jquery.hovertips.js"></script>
+		<script src="./js/index.js"></script>
+	
+	</body>
 </html>
+
+
