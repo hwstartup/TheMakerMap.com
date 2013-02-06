@@ -78,9 +78,14 @@
     function generateFilterQuery () {
         var q  = "",
             qp = "'Business Type' IN (",
-            qs = ")";
+            qs = ")",
+            $filter = $('#filter');
 
-        $('#filter').find('input[type="checkbox"]:checked').each(function () {
+        if ($filter.find('input[value="any"]:checked').length > 0) {
+            return '';
+        }
+
+        $filter.find('input[type="checkbox"]:checked').each(function () {
             q += "'" + $(this).attr('value') + "', ";
         });
 
