@@ -108,6 +108,7 @@ body {
 .brand {
 	font-size: 2.5em;
 	line-height: 1em;
+	text-transform:uppercase;
 }
 
 .menuToggle {
@@ -204,7 +205,6 @@ ul.filters {
 }
 
 ul.filters li {
-	padding: 10px 10px 8px;
 	background-color: #F6F6F6;
 	color: @darkBlue;
 	font-weight: 600;
@@ -215,6 +215,12 @@ ul.filters li {
 
 ul.filters li:hover {
 	background-color:@white;
+}
+
+ul.filters li label {
+	cursor:pointer;
+	padding: 10px 10px 8px;
+	display:block;
 }
 
 ul.filters li label input[type="checkbox"] {
