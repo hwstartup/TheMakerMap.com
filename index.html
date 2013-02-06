@@ -21,12 +21,12 @@
 		
 			<div class="header">
 				<span class="brand">THE <b>MAKER</b> MAP</span>
-				<button class="menuToggle">m</button>
+				<div class="menuToggle"><i class="icon-reorder"></i></div>
 			</div><!-- .header -->
 		
 			<div class="menu">
-				<a href="https://docs.google.com/a/launchrock.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="btn addResource" title="Add a Resource"><i class="icon-plus"></i><br/> Add a Resource</a>
-				<a href="JavaScript:void(0);" class="btn aboutMap" title="About the Map"><i class="icon-map-marker"></i><br/>About the Map</a>
+				<a href="https://docs.google.com/a/launchrock.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="action addResource" title="Add a Resource"><i class="icon-plus"></i><br/> Add a Resource</a>
+				<a href="JavaScript:void(0);" class="action aboutMap" title="About the Map"><i class="icon-map-marker"></i><br/>About the Map</a>
 			</div><!-- .menu -->
 		
 			<div class="aboutWrap">
@@ -35,14 +35,14 @@
 					<h2>Join the Maker Movement</h2>
 					<p>The Maker Map is an ongoing open source project which aims to create a global maker resources database - from workspaces to incubators - which is powered by the maker community and easily searchable on any device.</p> 
 					<p>If you would like to help you can start by mapping a resource, joining the project discussion or checking out the map source on github.</p>
-					<div class="searchBtn">
+					<div class="searchAction">
 						Search...
-						<div class="searchAction"><i class="icon-search"></i></div>
+						<div class="searchIcon"><i class="icon-search"></i></div>
 					</div>
 					<div class="mapActions">
-						<a href="https://docs.google.com/a/launchrock.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="btn addResource" title="Add a Resource"  target="_blank"><i class="icon-plus"></i><br/>Add a Resource</a>
-						<a href="https://groups.google.com/forum/#!forum/themakermap" class="btn discussProject" title="Discuss the Project"  target="_blank"><i class="icon-comments"></i><br/>Discuss</a>
-						<a href="https://github.com/hwstartup/TheMakerMap.com/issues?state=open" class="btn mapSource" title="View the Map Source" target="_blank"><i class="icon-github-alt"></i><br/>Map Source</a>
+						<a href="https://docs.google.com/a/launchrock.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="action addResource" title="Add a Resource"  target="_blank"><i class="icon-plus"></i><br/>Add a Resource</a>
+						<a href="https://groups.google.com/forum/#!forum/themakermap" class="action discussProject" title="Discuss the Project"  target="_blank"><i class="icon-comments"></i><br/>Discuss Project</a>
+						<a href="https://github.com/hwstartup/TheMakerMap.com/issues?state=open" class="action mapSource" title="View the Map Source" target="_blank"><i class="icon-github-alt"></i><br/>The Map Source</a>
 					</div>
 				</div><!-- .about -->
 			</div><!-- .aboutWrap -->
@@ -50,11 +50,12 @@
 				<form id="search">
 					<input type="text" placeholder="Search...">
 	      </form>
-				<div class="searchAction"><i class="icon-search"></i></div>
+				<div class="searchIcon"><i class="icon-search"></i></div>
+				<div class="filterIcon"><i class="icon-tags"></i></div>
 			</div><!-- .searchWrap -->
 		
 			<div class="filterWrap">
-				<div class="filterHeader">Filter By Business Type <div class="tip-filter"></div></div>
+				<div class="filterHeader">Filter By Business Type <i class="icon-caret-up"></i></div>
 				<form id="filter">
 					<ul class="filters">
 	          <li><label class="any-filter">Any<input type="checkbox" checked="checked" value="any"></label></li>
@@ -79,7 +80,7 @@
 		</div><!-- #controlWrap -->
 	
 		<div class="locateMe"><i class="icon-map-marker"></i></div>
-		<a href="https://docs.google.com/a/launchrock.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="btn btn-large addResource" title="Add a Resource">Add a Resource <i class="icon-plus pull-right"></i></a>
+		<a href="https://docs.google.com/a/launchrock.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="action action-large addResource" title="Add a Resource">Add a Resource <i class="icon-plus pull-right"></i></a>
 		
 		<!-- Map -->
 	  <div id="map-wrapper">

@@ -216,11 +216,25 @@
         });
     }
 
+		function filterMenu() {
+			$('.filterIcon').click(function(){
+				$('.filterWrap').slideToggle();
+			});
+		}
+		
+		function mobileMenu() {
+			$('.menuToggle').click(function(){
+				$('.aboutWrap').slideToggle();
+			});
+		}
+
     /**
      * On load, init maps & start listening for UI events
      */
     render();
     initMaps();
     initEventListeners();
+		filterMenu();
+		mobileMenu();
 
 })(jQuery);

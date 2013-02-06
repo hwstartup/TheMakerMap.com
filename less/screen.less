@@ -70,7 +70,7 @@ body {
 #map-wrapper{
 	width:100%;
 	height:100%;
-	position:absolute;
+	position:fixed;
 	z-index:1;
 	top:0;
 	left:0;
@@ -90,11 +90,9 @@ body {
 	background-color: @darkBlue;
 	color: @white;
 	width: 95%;
-	margin: 0 auto;
-	top: 10px;
-	position: absolute;
+	position: relative;
+	margin: 10px 0 0 10px;
 	max-width: 280px;
-	left: 10px;
 	z-index: 3;
 	.shadow;
 }
@@ -104,6 +102,7 @@ body {
 	padding: 20px 0 15px;
 	border-bottom: 1px solid #1E3F60;
 	font-family:@font-secondary;
+	position:relative;
 }
 
 .brand {
@@ -111,10 +110,21 @@ body {
 	line-height: 1em;
 }
 
-.menu-toggle {
-	
+.menuToggle {
+	display:none;
+	border: 1px solid #1E3F60;
+	position: absolute;
+	.rounded-corners;
+	text-align:center;
+	margin: 0;
+	right: 10px;
+	top:10px;
+	padding:5px 10px;
 }
 
+.menuToggle [class^="icon-"],.menuToggle [class*=" icon-"] {
+	font-size: 1em;
+}
 .menu {
 	text-align: center;
 	padding: 10px 0;
@@ -127,7 +137,7 @@ body {
 .about {
 	text-align: center;
 	padding: 20px 0;
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
 }
 
@@ -170,6 +180,17 @@ body {
 	margin: 0 auto;
 	padding: 8px 10px;
 	font-size: 0.8em;
+	position:relative;
+}
+
+.filterHeader .icon-caret-up {
+	display:none;
+	color:@darkBlue;
+	font-size: 27px;
+	position: absolute;
+	right: 21px;
+	top: -17px;
+	z-index:10;
 }
 
 #filter {
@@ -204,6 +225,10 @@ ul.filters li label input[type="checkbox"] {
 
 /* search */
 
+#search {
+	width:100%;
+}
+
 .searchWrap {
 	background: @white;
 	height: 60px;
@@ -212,20 +237,51 @@ ul.filters li label input[type="checkbox"] {
 }
 
 #search input[type="text"] {
-	width: 94%;
+	width: 100%;
 	font-family:@font-primary;
 	margin: 0 auto;
 	border: none;
 	font-size: 1.5em;
-	padding: 16px 0 12px;
+	padding: 16px 10px 12px;
 	display: block;
 	font-weight: 300;
 	outline:none;
 }
 
-/* btns */
+.filterIcon {
+	display:none;
+	background: @white;
+	height: 100%;
+	width: 53px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-align: center;
+	border-left: 1px solid #DEDEDE;
+}
 
-a.btn {
+.searchIcon {
+	height: 100%;
+	width: 40px;
+	display: table;
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-align: center;
+	background:@white;
+}
+
+.searchIcon .icon-search,.filterIcon .icon-tags {
+	color: @lightBlue;
+	font-size: 1.5em;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+
+/* actions */
+
+a.action {
 	background-color:#0082C8;
 	color:@white;
 	text-decoration:none;
@@ -241,16 +297,16 @@ a.btn {
 	.rounded-corners;
 }
 
-a.btn:hover {
+a.action:hover {
 	.shadowInset;
 }
 
-a.btn:active {
+a.action:active {
 	-webkit-box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, .45);
 	box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, .45);
 }
 
-a.btn-large.addResource {
+a.action-large.addResource {
 	position:absolute;
 	z-index:2;
 	bottom:30px;
@@ -263,25 +319,26 @@ a.btn-large.addResource {
 	box-shadow: 0px 0px 0px 6px rgba(255,255,255, .45);
 }
 
-.menu a.btn.addResource {
+.menu a.action.addResource {
 	margin: 0 2% 0 0;
 }
 
-a.btn [class^="icon-"],a.btn [class*=" icon-"] {
+a.action [class^="icon-"],a.action [class*=" icon-"] {
 	font-size:1.8em;
 }
 
-a.btn-large [class^="icon-"],a.btn-large [class*=" icon-"] {
+a.action-large [class^="icon-"],a.action-large [class*=" icon-"] {
 	font-size:1.2em;
 }
 
 
-.mapActions a.btn {
-	width: 21.5%;
+.mapActions a.action {
+	width: 30%;
 	margin: 0 0.5%;
+	padding:12px 0 8px;
 }
 
-.searchBtn {
+.searchAction {
 	background: @white;
 	color: #dedede;
 	font-size: 1.5em;
@@ -301,11 +358,11 @@ a.btn-large [class^="icon-"],a.btn-large [class*=" icon-"] {
 	.animate;
 }
 
-.searchBtn:hover {
+.searchAction:hover {
 	color:#162640;
 }
 
-.searchBtn [class^="icon-"],.searchBtn [class*="icon-"] {
+.searchAction [class^="icon-"],.searchAction [class*="icon-"] {
 	font-size:1.2em;
 }
 
@@ -313,7 +370,7 @@ a.btn-large [class^="icon-"],a.btn-large [class*=" icon-"] {
 	background: @white;	
 	height:40px;
 	width:40px;
-	position:absolute;
+	position:fixed;
 	z-index:2;
 	bottom:30px;
 	left:10px;
@@ -335,25 +392,5 @@ a.btn-large [class^="icon-"],a.btn-large [class*=" icon-"] {
 	color:@lightBlue;
 }
 
-.menuToggle {
-	display:none;
-}
 
-/* icons */
-
-.searchAction {
-	height: 100%;
-	width: 40px;
-	display: table;
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-
-.icon-search {
-	color: @lightBlue;
-	font-size: 1.5em;
-	vertical-align: middle;
-	display: table-cell;
-}
 
