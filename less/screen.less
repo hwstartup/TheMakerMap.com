@@ -65,6 +65,7 @@ html{
 body {
 	margin:0;
 	padding:0;
+	font-family:@font-primary;
 }
 
 #map-wrapper{
@@ -167,7 +168,7 @@ body {
 }
 
 .footer {
-	padding: 20px;
+	padding: 10px;
 }
 
 
@@ -180,7 +181,7 @@ body {
 .filterHeader {
 	margin: 0 auto;
 	padding: 8px 10px;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	position:relative;
 }
 
@@ -221,6 +222,8 @@ ul.filters li label {
 	cursor:pointer;
 	padding: 10px 10px 8px;
 	display:block;
+	font-weight: 600;
+	margin: 0;
 }
 
 ul.filters li label input[type="checkbox"] {
@@ -252,6 +255,8 @@ ul.filters li label input[type="checkbox"] {
 	display: block;
 	font-weight: 300;
 	outline:none;
+	line-height: 1.5em;
+	height: 100%;
 }
 
 .filterIcon {
@@ -320,6 +325,7 @@ a.action-large.addResource {
 	width: 240px;
 	padding:24px 20px 18px;
 	font-size:1.8em;
+	line-height: 1em;
 	text-align:left;
 	-webkit-box-shadow: 0px 0px 0px 6px rgba(255,255,255, .45);
 	box-shadow: 0px 0px 0px 6px rgba(255,255,255, .45);
