@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Maker Map</title>
-		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<link rel="stylesheet" href="./css/bootstrap.css">
 		<link rel="stylesheet" href="./css/screen.css">						
@@ -64,9 +64,35 @@
 	      </form>
 			</div><!-- .filterWrap -->
 			<div class="footer">
-				<!--a href="https://twitter.com/share" class="twitter-share-button" data-url="http://themakermap.com">Tweet</a-->
-				<!--script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script-->
-				<!--iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fthemakermap.com&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=203095866422738" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe-->
+            <div class="footer">
+                <a class="socialite facebook-like"  href="http://www.facebook.com/sharer.php?u=http://themakermap.com"
+                                               data-href="http://themakermap.com"
+                                               data-send="false"
+                                             data-layout="button_count"
+                                              data-width="100"
+                                         data-show-faces="false"
+                                               data-font="segoe ui"
+                                                     rel="nofollow"
+                                                  target="_blank">Share on Facebook</a>
+
+                <a class="socialite twitter-share"  href="http://twitter.com/share"
+                                                data-url="http://themakermap.com"
+                                                data-dnt="true"
+                                                     rel="nofollow"
+                                                  target="_blank">Share on Twitter</a>
+
+                <a class="socialite github-fork"    href="https://github.com/hwstartup/TheMakerMap.com"
+                                               data-user="hwstartup"
+                                               data-repo="TheMakerMap.com"
+                                               data-type="fork"
+                                              data-count="true">Fork on GitHub</a>
+
+                <!-- a class="socialite googleplus-one" href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=http://themakermap.com"
+                                               data-size="medium"
+                                               data-href="http://themakermap.com"
+                                                     rel="nofollow"
+                                                  target="_blank">Share on Google+</a -->
+            </div>
 			</div>
 		</div><!-- #controlWrap -->
 		<div class="locateMe"><i class="icon-map-marker"></i></div>
@@ -84,7 +110,9 @@
 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 		<script src="./js/jquery.min.js"></script>
 		<script src="./js/bootstrap.js"></script>
-		<script src="./js/jquery.hovertips.js"></script>
+        <script src="./js/jquery.hovertips.js"></script>
+        <script src="./js/socialite.min.js"></script>
+		<script src="./js/socialite.github.js"></script>
 		<script src="./js/index.js"></script>
 	</body>
 </html>

@@ -244,7 +244,12 @@
 			});
 			
 		}
-	
+
+
+    function initSocialite() {
+        Socialite.load($('div.footer'));
+    }
+
     /**
      * On load, init maps & start listening for UI events
      */
@@ -254,5 +259,6 @@
 		filterMenu();
 		mobileMenu();
 		aboutModal();
+    initSocialite();
 
 })(jQuery);
