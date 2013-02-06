@@ -338,7 +338,7 @@ ul.filters li label input[type="checkbox"]{float:right;margin:4px 0;padding:0;}
 .searchWrap{background:#ffffff;height:60px;overflow:hidden;position:relative;}
 #search input[type="text"]{width:100%;font-family:'PT Sans',sans-serif;margin:0 auto;border:none;font-size:1.5em;padding:16px 10px 12px;display:block;font-weight:300;outline:none;line-height:1.5em;height:100%;}
 .filterIcon{display:none;background:#ffffff;height:100%;width:53px;position:absolute;top:0;right:0;text-align:center;border-left:1px solid #DEDEDE;}
-.searchIcon{height:100%;width:40px;display:table;position:absolute;top:0;right:0;text-align:center;background:#ffffff;}
+.searchIcon{height:100%;width:40px;display:table;position:absolute;top:0;right:0;text-align:center;background:#ffffff;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px;}
 .searchIcon .icon-search,.filterIcon .icon-tags{color:#0082c8;font-size:1.5em;vertical-align:middle;display:table-cell;}
 a.action{background-color:#0082C8;color:#ffffff;text-decoration:none;font-size:0.9em;padding:12px 10px 8px;display:inline-block;border-color:#0082C8;border-style:solid;border-width:1px;width:35%;text-align:center;-webkit-transition:all 0.2s ease;-moz-transition:all 0.2s ease;-o-transition:all 0.2s ease;transition:all 0.2s ease;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px;}
 a.action:hover{-webkit-box-shadow:inset 0px 0px 1px 1px rgba(0, 0, 0, 0.3);box-shadow:inset 0px 0px 1px 1px rgba(0, 0, 0, 0.3);}
