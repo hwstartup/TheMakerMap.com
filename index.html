@@ -26,8 +26,8 @@
 			</div><!-- .header -->
 		
 			<div class="menu">
-				<a href="https://docs.google.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="action addResource" title="Add a Resource"><i class="icon-plus"></i><br/> Add a Resource</a>
-				<a href="JavaScript:void(0);" class="action aboutMap" title="About the Map"><i class="icon-map-marker"></i><br/>About the Map</a>
+				<a href="https://docs.google.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="action addResource" title="Add a Resource" target="_blank"><i class="icon-plus"></i><br/> Add a Resource</a>
+				<a href="#aboutModal" role="button" class="action aboutMap" title="About the Map" data-toggle="modal"><i class="icon-map-marker"></i><br/>About the Map</a>
 			</div><!-- .menu -->
 		
 			<div class="aboutWrap">
@@ -49,7 +49,7 @@
 			</div><!-- .aboutWrap -->
 			<div class="searchWrap">
 				<form id="search">
-					<input type="text" placeholder="Search...">
+					<input id="searchForm" type="text" placeholder="Search...">
 	      </form>
 				<div class="searchIcon"><i class="icon-search"></i></div>
 				<div class="filterIcon"><i class="icon-tags"></i></div>
@@ -81,12 +81,19 @@
 		</div><!-- #controlWrap -->
 	
 		<div class="locateMe"><i class="icon-map-marker"></i></div>
-		<a href="https://docs.google.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="action action-large addResource" title="Add a Resource">Add a Resource <i class="icon-plus pull-right"></i></a>
+		<a href="https://docs.google.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="action action-large addResource" title="Add a Resource" target="_blank">Add a Resource <i class="icon-plus pull-right"></i></a>
 		
 		<!-- Map -->
 	  <div id="map-wrapper">
 	      <div id="map-canvas"></div>
 	  </div>	
+	
+		
+		<!-- Modal -->
+		<div id="aboutModal" class="modal hide fade" tabindex="-1" role="dialog" >
+		  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		  <div class="modal-body"></div>
+		</div>
 	
 		<!-- Scripts -->
 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>

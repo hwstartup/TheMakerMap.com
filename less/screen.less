@@ -144,7 +144,7 @@ body {
 }
 
 .about h1{
-	font-size: 1.3em;
+	font-size: 2em;
 	margin: 0 0 5px;
 	line-height: 1em;
 	text-transform: uppercase;
@@ -153,12 +153,12 @@ body {
 .about h2{
 	line-height: 1em;
 	margin: 0;
-	font-size: 1.2em;
+	font-size: 1.8em;
 	font-weight: 300;
 }
 
 .about p {
-	font-size: 1em;
+	font-size: 1.1em;
 	line-height: 1.3em;
 	margin: 1em 0;
 }
@@ -363,7 +363,7 @@ a.action-large [class^="icon-"],a.action-large [class*=" icon-"] {
 	border-style:solid;
 	border-width:1px;
 	cursor:pointer;
-	width: 75%;
+	width: 88%;
 	margin: 0 auto 2%;
 	position: relative;
 	.rounded-corners;
@@ -376,6 +376,10 @@ a.action-large [class^="icon-"],a.action-large [class*=" icon-"] {
 
 .searchAction [class^="icon-"],.searchAction [class*="icon-"] {
 	font-size:1.2em;
+}
+
+.searchAction .searchIcon {
+	width:50px;
 }
 
 .locateMe {
@@ -404,5 +408,14 @@ a.action-large [class^="icon-"],a.action-large [class*=" icon-"] {
 	color:@lightBlue;
 }
 
-
+#aboutModal button.close {
+	z-index: 10;
+	font-size: 3em;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	color: @lightBlue;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+}
 

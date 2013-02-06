@@ -227,6 +227,18 @@
 				$('.aboutWrap').slideToggle();
 			});
 		}
+		
+		function aboutModal() {
+			var aboutContent = $('.aboutWrap').html();
+			$('#aboutModal .modal-body').html(aboutContent);
+			
+			$('.about .searchAction').click(function(){
+				console.log('click');
+				$('#aboutModal').modal('hide')
+				$('#searchForm').focus();
+			});
+			
+		}
 
     /**
      * On load, init maps & start listening for UI events
@@ -236,5 +248,6 @@
     initEventListeners();
 		filterMenu();
 		mobileMenu();
+		aboutModal();
 
 })(jQuery);
