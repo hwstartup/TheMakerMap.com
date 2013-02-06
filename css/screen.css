@@ -318,8 +318,8 @@ body{margin:0;padding:0;font-family:'PT Sans',sans-serif;}
 #controlWrap{background-color:#162640;color:#ffffff;width:95%;position:relative;margin:10px 0 0 10px;max-width:280px;z-index:3;-webkit-box-shadow:0px 0px 3px 1px rgba(0, 0, 0, 0.4);box-shadow:0px 0px 3px 1px rgba(0, 0, 0, 0.4);}
 .header{text-align:center;padding:20px 0 15px;border-bottom:1px solid #1E3F60;font-family:'PT Sans Narrow',sans-serif;position:relative;}
 .brand{font-size:2.5em;line-height:1em;text-transform:uppercase;}
-.menuToggle{display:none;border:1px solid #1E3F60;position:absolute;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px;text-align:center;margin:0;right:10px;top:12px;padding:5px 10px;}
-.menuToggle [class^="icon-"],.menuToggle [class*=" icon-"]{font-size:2em;}
+.menuToggle{display:none;border:1px solid #1E3F60;position:absolute;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px;text-align:center;margin:0;right:9px;top:9px;padding:4px 9px 2px;}
+.menuToggle [class^="icon-"],.menuToggle [class*=" icon-"]{font-size:1.5em;}
 .menu{text-align:center;padding:10px 0 14px;}
 .aboutWrap{display:none;}
 .about{text-align:center;padding:20px 0;width:90%;margin:0 auto;}
@@ -337,7 +337,7 @@ ul.filters li label input[type="checkbox"]{float:right;margin:4px 0;padding:0;}
 #search{width:100%;margin:0;}
 .searchWrap{background:#ffffff;height:60px;position:relative;}
 #search input[type="text"]{font-family:'PT Sans',sans-serif;margin:0 auto;border:none;font-size:1.5em;padding:16px 4% 12px;width:92%;display:block;font-weight:300;outline:none;line-height:1.5em;height:100%;}
-.filterIcon{display:none;background:#ffffff;height:100%;width:63px;position:absolute;top:0;right:0;text-align:center;border-left:1px solid #DEDEDE;}
+.filterIcon{display:none;background:#ffffff;height:100%;width:53px;position:absolute;top:0;right:0;text-align:center;border-left:1px solid #DEDEDE;}
 .searchIcon{height:100%;width:40px;display:table;position:absolute;top:0;right:0;text-align:center;background:#ffffff;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px;}
 .searchIcon .icon-search,.filterIcon .icon-tags{color:#0082c8;font-size:1.5em;vertical-align:middle;display:table-cell;}
 a.action{background-color:#0082C8;color:#ffffff;text-decoration:none;font-size:0.9em;padding:12px 10px 8px;display:inline-block;border-color:#0082C8;border-style:solid;border-width:1px;width:35%;text-align:center;position:relative;text-shadow:0 1px 0 rgba(0, 0, 0, 0.3);-webkit-transition:all 0.2s ease;-moz-transition:all 0.2s ease;-o-transition:all 0.2s ease;transition:all 0.2s ease;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 3px 0 0 #0b62a8;box-shadow:0 3px 0 0 #0b62a8;}
@@ -354,7 +354,7 @@ a.action-large [class^="icon-"],a.action-large [class*=" icon-"]{font-size:1.2em
 .searchAction:hover{color:#162640;}
 .searchAction [class^="icon-"],.searchAction [class*="icon-"]{font-size:1.2em;}
 .searchAction .searchIcon{width:50px;}
-.locateMe{background:#ffffff;height:40px;width:40px;position:fixed;z-index:2;bottom:30px;left:10px;cursor:pointer;text-align:center;display:table;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px;-webkit-box-shadow:0px 0px 3px 1px rgba(0, 0, 0, 0.4);box-shadow:0px 0px 3px 1px rgba(0, 0, 0, 0.4);}
+.locateMe{background:#ffffff;height:40px;width:40px;position:fixed;z-index:2;bottom:30px;right:10px;cursor:pointer;text-align:center;display:table;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px;-webkit-box-shadow:0px 0px 3px 1px rgba(0, 0, 0, 0.4);box-shadow:0px 0px 3px 1px rgba(0, 0, 0, 0.4);}
 .locateMe [class^="icon-"],.locateMe [class*="icon-"]{color:#c1c1c1;font-size:1.5em;vertical-align:middle;display:table-cell;}
 .locateMe.active [class^="icon-"],.locateMe.active [class*="icon-"]{color:#0082c8;}
 #aboutModal button.close{z-index:10;font-size:3em;position:absolute;right:15px;top:15px;color:#0082c8;opacity:0.7;filter:alpha(opacity=70);}

@@ -6,30 +6,24 @@
 		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no" />
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<link rel="stylesheet" href="./css/bootstrap.css">
-		<link rel="stylesheet" href="./css/screen.css">				
+		<link rel="stylesheet" href="./css/screen.css">						
 		<link rel="stylesheet" href="./css/phone.css" media="only screen and (max-device-width: 480px)">
 		<link rel="stylesheet" href="./css/tablet.css" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)">
 		<link href="http://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css">
-		
 		<!--[if lt IE 9]>
 		 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		
 	</head>
 	<body>
-		
 		<div id="controlWrap">
-		
 			<div class="header">
 				<span class="brand">The <b>Maker</b> Map</span>
 				<div class="menuToggle"><i class="icon-reorder"></i></div>
 			</div><!-- .header -->
-		
 			<div class="menu">
 				<a href="https://docs.google.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="action addResource" title="Add a Resource" target="_blank"><i class="icon-plus"></i><br/> Add a Resource</a>
 				<a href="#aboutModal" role="button" class="action aboutMap" title="About the Map" data-toggle="modal"><i class="icon-map-marker"></i><br/>About the Map</a>
 			</div><!-- .menu -->
-		
 			<div class="aboutWrap">
 				<div class="about">
 					<h1>Find or Map a Resource</h1>
@@ -54,7 +48,6 @@
 				<div class="searchIcon"><i class="icon-search"></i></div>
 				<div class="filterIcon"><i class="icon-tags"></i></div>
 			</div><!-- .searchWrap -->
-		
 			<div class="filterWrap">
 				<div class="filterHeader">Filter By Business Type <i class="icon-caret-up"></i></div>
 				<form id="filter">
@@ -70,38 +63,29 @@
 					</ul>
 	      </form>
 			</div><!-- .filterWrap -->
-		
 			<div class="footer">
 				<!--a href="https://twitter.com/share" class="twitter-share-button" data-url="http://themakermap.com">Tweet</a-->
 				<!--script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script-->
 				<!--iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fthemakermap.com&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=203095866422738" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe-->
 			</div>
-	
-	
 		</div><!-- #controlWrap -->
-	
 		<div class="locateMe"><i class="icon-map-marker"></i></div>
 		<a href="https://docs.google.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="action action-large addResource" title="Add a Resource" target="_blank">Add a Resource <i class="icon-plus pull-right"></i></a>
-		
 		<!-- Map -->
 	  <div id="map-wrapper">
 	      <div id="map-canvas"></div>
 	  </div>	
-	
-		
 		<!-- Modal -->
 		<div id="aboutModal" class="modal hide fade" tabindex="-1" role="dialog" >
 		  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 		  <div class="modal-body"></div>
 		</div>
-	
 		<!-- Scripts -->
 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 		<script src="./js/jquery.min.js"></script>
 		<script src="./js/bootstrap.js"></script>
 		<script src="./js/jquery.hovertips.js"></script>
 		<script src="./js/index.js"></script>
-	
 	</body>
 </html>
 

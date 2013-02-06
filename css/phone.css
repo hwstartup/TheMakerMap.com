@@ -7,10 +7,10 @@ a.action-large.addResource{display:none;}
 .about h1,.about h2{display:none;}
 .filterIcon{display:table;}
 .about{padding:0 0 20px;}
+.about p,.mapActions a.action{font-size:.8em;}
 .menuToggle,.filterHeader .icon-caret-up{display:block;}
 .searchWrap .searchIcon{left:0;}
 .header{padding:15px 0 10px;}
-.brand{font-size:3em;}
-.searchWrap{height:80px;}
-#search input[type="text"]{padding:25px 4% 24px;}
-ul.filters li label{padding:20px 10px 16px;font-size:1.4em;}
+.brand{font-size:1.5em;}
+.searchWrap{height:50px;}
+#search input[type="text"]{font-size:1.2em;padding:15px 4% 10px;}
