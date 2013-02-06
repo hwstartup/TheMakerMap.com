@@ -239,7 +239,7 @@
 			});
 			
 		}
-
+	
     /**
      * On load, init maps & start listening for UI events
      */

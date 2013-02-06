@@ -10,4 +10,7 @@ a.action-large.addResource{display:none;}
 .menuToggle,.filterHeader .icon-caret-up{display:block;}
 .searchWrap .searchIcon{left:0;}
 .header{padding:15px 0 10px;}
-.brand{font-size:1.6em;}
+.brand{font-size:3em;}
+.searchWrap{height:80px;}
+#search input[type="text"]{padding:25px 4% 24px;}
+ul.filters li label{padding:20px 10px 16px;font-size:1.4em;}

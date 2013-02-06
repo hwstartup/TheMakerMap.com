@@ -26,6 +26,17 @@
  * Shadows, Transitions & Borders
  */
 
+.btnReg (@borderLarge:0 3px 0 0 #0B62A8) {
+	-webkit-box-shadow: @borderLarge;
+	box-shadow: @borderLarge;
+
+}
+
+.btnActive (@borderSmall:0 2px 0 0 #0B62A8) {
+	-webkit-box-shadow: @borderSmall;
+	box-shadow: @borderSmall;
+}
+
 .shadowInset (@insetShadow: inset 0px 0px 1px 1px rgba(0, 0, 0, .3)) {
 	-webkit-box-shadow: @insetShadow;
 	box-shadow: @insetShadow;
@@ -50,7 +61,6 @@
 	-o-transition: @transitions;
 	transition: @transitions;
 }
-
 
 /**
  * Start CSS
@@ -120,16 +130,18 @@ body {
 	text-align:center;
 	margin: 0;
 	right: 10px;
-	top:10px;
+	top:12px;
 	padding:5px 10px;
 }
 
 .menuToggle [class^="icon-"],.menuToggle [class*=" icon-"] {
-	font-size: 1em;
+	font-size: 2em;
 }
+
 .menu {
 	text-align: center;
-	padding: 10px 0;
+	padding: 10px 0 14px;
+	
 }
 
 .aboutWrap {
@@ -241,17 +253,17 @@ ul.filters li label input[type="checkbox"] {
 .searchWrap {
 	background: @white;
 	height: 60px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	position: relative;
 }
 
 #search input[type="text"] {
-	width: 100%;
 	font-family:@font-primary;
 	margin: 0 auto;
 	border: none;
 	font-size: 1.5em;
-	padding: 16px 10px 12px;
+	padding: 16px 4% 12px;
+	width: 92%;
 	display: block;
 	font-weight: 300;
 	outline:none;
@@ -263,7 +275,7 @@ ul.filters li label input[type="checkbox"] {
 	display:none;
 	background: @white;
 	height: 100%;
-	width: 53px;
+	width: 63px;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -305,17 +317,10 @@ a.action {
 	border-width:1px;
 	width: 35%;
 	text-align: center;
+	position:relative;
 	.animate;
 	.rounded-corners;
-}
-
-a.action:hover {
-	.shadowInset;
-}
-
-a.action:active {
-	-webkit-box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, .45);
-	box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, .45);
+	.btnReg;
 }
 
 a.action-large.addResource {
@@ -328,12 +333,28 @@ a.action-large.addResource {
 	font-size:1.8em;
 	line-height: 1em;
 	text-align:left;
-	-webkit-box-shadow: 0px 0px 0px 6px rgba(255,255,255, .45);
-	box-shadow: 0px 0px 0px 6px rgba(255,255,255, .45);
+	.btnReg;
+}
+
+a.action-large.addResource:active{
+	bottom:29px;
+	.btnActive;
 }
 
 .menu a.action.addResource {
 	margin: 0 2% 0 0;
+}
+
+a.action:hover {
+	background-color:#0082E1;
+}
+
+a.action:active {
+	.btnActive;
+}
+
+.menu a.action:active,.mapActions a.action:active {
+	top:1px;
 }
 
 a.action [class^="icon-"],a.action [class*=" icon-"] {
@@ -343,7 +364,6 @@ a.action [class^="icon-"],a.action [class*=" icon-"] {
 a.action-large [class^="icon-"],a.action-large [class*=" icon-"] {
 	font-size:1.2em;
 }
-
 
 .mapActions a.action {
 	width: 30%;
