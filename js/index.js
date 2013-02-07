@@ -78,9 +78,14 @@
     function generateFilterQuery () {
         var q  = "",
             qp = "'Business Type' IN (",
-            qs = ")";
+            qs = ")",
+            $filter = $('#filter');
 
-        $('#filter').find('input[type="checkbox"]:checked').each(function () {
+        if ($filter.find('input[value="any"]:checked').length > 0) {
+            return '';
+        }
+
+        $filter.find('input[type="checkbox"]:checked').each(function () {
             q += "'" + $(this).attr('value') + "', ";
         });
 
@@ -116,6 +121,10 @@
             zoom: 9,
             disableDefaultUI: true,
             zoomControl: true,
+						zoomControlOptions: {
+							style: google.maps.ZoomControlStyle.LARGE,
+							position: google.maps.ControlPosition.TOP_RIGHT
+						},
             streetViewControl: true
         });
 
@@ -155,15 +164,30 @@
             map:    map
         });
 
-
         if (navigator && navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                map.setCenter(latlng);
-                map.setZoom(12);
-            });
+           locateMe();
         }
     }
+
+		function locateMe () {
+			navigator.geolocation.getCurrentPosition(function(position) {
+	      var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	      map.setCenter(latlng);
+	      map.setZoom(12);
+	
+				$('.locateMe').fadeIn(1000,function(){
+					$(this).tooltip('show');
+				}).css("display",'table');
+				
+	    });
+	
+			$('.locateMe').click(function(){
+				locateMe();
+			});
+			
+		}
+		
+		
 
     /**
      * UI events
@@ -212,11 +236,44 @@
         });
     }
 
+		function filterMenu() {
+			$('.filterIcon').click(function(){
+				$('.filterWrap').slideToggle();
+			});
+		}
+		
+		function mobileMenu() {
+			$('.menuToggle').click(function(){
+				$('.aboutWrap').slideToggle();
+			});
+		}
+		
+		function aboutModal() {
+			var aboutContent = $('.aboutWrap').html();
+			$('#aboutModal .modal-body').html(aboutContent);
+			
+			$('.about .searchAction').click(function(){
+				console.log('click');
+				$('#aboutModal').modal('hide')
+				$('#searchForm').focus();
+			});
+			
+		}
+
+
+    function initSocialite() {
+        Socialite.load($('div.footer'));
+    }
+
     /**
      * On load, init maps & start listening for UI events
      */
     render();
     initMaps();
     initEventListeners();
+		filterMenu();
+		mobileMenu();
+		aboutModal();
+    initSocialite();
 
 })(jQuery);
