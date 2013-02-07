@@ -1,2 +1,16 @@
-#topnav{display:none !important;}
-#filter{display:none !important;}
+#controlWrap{width:95%;max-width:95%;margin:10px auto 10px;}
+.menu,.footerWrap,.tooltip{display:none !important;}
+.filterWrap{display:none;}
+a.action-large.addResource{display:none;}
+.searchWrap .searchIcon{display:none;}
+.aboutWrap .searchAction{display:none;}
+.about h1,.about h2{display:none;}
+.filterIcon{display:table;}
+.about{padding:0 0 20px;}
+.about p,.mapActions a.action{font-size:.8em;}
+.menuToggle,.filterHeader .icon-caret-up{display:block;}
+.searchWrap .searchIcon{left:0;}
+.header{padding:15px 0 10px;}
+.brand{font-size:1.5em;}
+.searchWrap{height:50px;}
+#search input[type="text"]{font-size:1.2em;padding:15px 4% 10px;}
