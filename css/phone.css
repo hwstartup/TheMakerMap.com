@@ -1,5 +1,5 @@
 #controlWrap{width:95%;max-width:95%;margin:10px auto 10px;}
-.menu,.footerWrap{display:none !important;}
+.menu,.footerWrap,.tooltip{display:none !important;}
 .filterWrap{display:none;}
 a.action-large.addResource{display:none;}
 .searchWrap .searchIcon{display:none;}

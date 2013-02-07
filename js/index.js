@@ -164,15 +164,30 @@
             map:    map
         });
 
-
         if (navigator && navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                map.setCenter(latlng);
-                map.setZoom(12);
-            });
+           locateMe();
         }
     }
+
+		function locateMe () {
+			navigator.geolocation.getCurrentPosition(function(position) {
+	      var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	      map.setCenter(latlng);
+	      map.setZoom(12);
+	
+				$('.locateMe').fadeIn(1000,function(){
+					$(this).tooltip('show');
+				}).css("display",'table');
+				
+	    });
+	
+			$('.locateMe').click(function(){
+				locateMe();
+			});
+			
+		}
+		
+		
 
     /**
      * UI events
