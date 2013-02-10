@@ -128,8 +128,6 @@
             streetViewControl: true
         });
 
-				mc = new MarkerClusterer(map);
-
         var style = [
             {
                 elementType: 'geometry',
