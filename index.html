@@ -25,8 +25,8 @@
 				<div class="menuToggle"><i class="icon-reorder"></i></div>
 			</div><!-- .header -->
 			<div class="menu">
-				<a href="https://docs.google.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="action addResource" title="Add a Resource" target="_blank"><i class="icon-plus"></i><br/> Add a Resource</a>
-				<a href="#aboutModal" role="button" class="action aboutMap" title="About the Map" data-toggle="modal"><i class="icon-map-marker"></i><br/>About the Map</a>
+				<a href="https://docs.google.com/spreadsheet/viewform?formkey=dFFZc2hBY1h3M3hPM1B2bVphZmhsY0E6MA#gid=0" class="action addResource" title="Add a Resource" target="_blank">Add a Resource <i class="icon-plus"></i></a>
+				<a href="#aboutModal" role="button" class="action aboutMap" title="About the Map" data-toggle="modal">About the Map <i class="icon-map-marker"></i></a>
 			</div><!-- .menu -->
 			<div class="aboutWrap">
 				<div class="about">
@@ -55,16 +55,23 @@
 			<div class="filterWrap">
 				<div class="filterHeader">Filter By Business Type <i class="icon-caret-up"></i></div>
 				<form id="filter">
-					<ul class="filters">
-	          <li><label class="any-filter">Any<input type="checkbox" checked="checked" value="any"></label></li>
-	          <li><label>Retail<input type="checkbox" checked="checked" value="retail"></label></li>
-	          <li><label>Workspace<input type="checkbox" checked="checked" value="workspace"></label></li>
-	          <li><label>Fabricator<input type="checkbox" checked="checked" value="fabricator"></label></li>
-	          <li><label>Distributor<input type="checkbox" checked="checked" value="distributor"></label></li>
-	          <li><label>Museum<input type="checkbox" checked="checked" value="museum"></label></li>
-	          <li><label>Service<input type="checkbox" checked="checked" value="service"></label></li>
-	          <li><label>Incubator<input type="checkbox" checked="checked" value="incubator"></label></li>
-					</ul>
+					<table border="0" bordercolor="#ffffff" style="background-color:#ffffff" width="100%" cellpadding="0" cellspacing="0" class="filters">
+						<tr>
+							<td><label class="any-filter"><input type="checkbox" checked="checked" value="any">Any</label></td>
+							<td><label><input type="checkbox" checked="checked" value="retail">Retail</label></td>
+							<td><label><input type="checkbox" checked="checked" value="workspace">Workspace</label></td>
+						</tr>
+						<tr>
+							<td><label><input type="checkbox" checked="checked" value="fabricator">Fabricator</label></td>
+							<td><label><input type="checkbox" checked="checked" value="distributor">Distributor</label></td>
+							<td><label><input type="checkbox" checked="checked" value="museum">Museum</label></td>
+						</tr>
+						<tr>
+							<td><label><input type="checkbox" checked="checked" value="service">Service</label></td>
+							<td><label><input type="checkbox" checked="checked" value="incubator">Incubator</label></td>
+							<td><label></label></td>
+						</tr>
+					</table>
 	      </form>
 			</div><!-- .filterWrap -->
 			<div class="footerWrap">

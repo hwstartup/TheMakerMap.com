@@ -224,36 +224,37 @@ body {
 	margin-bottom: 0;
 }
 
-ul.filters {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+.filters td {
+	background-color: #F6F6F6;
+	border:1px solid #dedede;
+	padding: 6px 8px 4px;
 }
 
-ul.filters li {
-	background-color: #F6F6F6;
+.filters td:last-child {
+	border-right:none;
+}
+
+.filters td:first-child {
+	border-left:none;
+}
+
+.filters td:hover {
+	background-color: @white;
+}
+
+.filters label {
 	color: @darkBlue;
 	font-weight: 600;
-	border-bottom: 1px solid #DEDEDE;
-	cursor: pointer;
+	cursor:pointer;
+	display:block;
+	font-weight: 600;
+	font-size:.85em;
+	margin: 0;
 	.animate;
 }
 
-ul.filters li:hover {
-	background-color:@white;
-}
-
-ul.filters li label {
-	cursor:pointer;
-	padding: 10px 10px 8px;
-	display:block;
-	font-weight: 600;
-	margin: 0;
-}
-
-ul.filters li label input[type="checkbox"] {
-	float: right;
-	margin: 4px 0;
+.filters label input[type="checkbox"] {
+	margin: 4px 6px 4px 0;
 	padding: 0;
 }
 
@@ -324,7 +325,7 @@ a.action {
 	color:@white;
 	text-decoration:none;
 	font-size: 0.9em;
-	padding: 12px 10px 8px;
+	padding: 7px 10px 8px;
 	display:inline-block;
 	border-color:#0082C8;
 	border-style:solid;
@@ -356,6 +357,11 @@ a.action-large.addResource:active{
 	.btnActive;
 }
 
+.menu a.action {
+	padding: 7px 10px 5px;
+	text-align: left;
+}
+
 .menu a.action.addResource {
 	margin: 0 2% 0 0;
 }
@@ -378,6 +384,12 @@ a.action [class^="icon-"],a.action [class*=" icon-"] {
 
 a.action-large [class^="icon-"],a.action-large [class*=" icon-"] {
 	font-size:1.2em;
+}
+
+.menu a.action [class^="icon-"],.menu a.action [class*=" icon-"] {
+	font-size:1.4em;
+	float:right;
+	margin: 1px 0 0 ;
 }
 
 .mapActions a.action {
