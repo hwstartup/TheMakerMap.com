@@ -2,6 +2,9 @@
 .menu,.footerWrap,.tooltip{display:none !important;}
 .filterWrap{display:none;}
 a.action-large.addResource{display:none;}
+.searchWrap{-webkit-box-shadow:0 3px 0 0 #ccc;box-shadow:0 3px 0 0 #ccc;}
+.filterWrap{position:relative;z-index:2;background:#112F49;}
+.filterWrap table{-webkit-box-shadow:0 3px 0 0 #ccc;box-shadow:0 3px 0 0 #ccc;}
 .searchWrap .searchIcon{display:none;}
 .aboutWrap .searchAction{display:none;}
 .about h1,.about h2{display:none;}
@@ -10,8 +13,8 @@ a.action-large.addResource{display:none;}
 .about p,.mapActions a.action{font-size:.8em;}
 .menuToggle,.filterHeader .icon-caret-up{display:block;}
 .searchWrap .searchIcon{left:0;}
-.header{padding:15px 0 10px;}
-.brand{font-size:1.5em;}
+.header{padding:15px 0 10px;padding:4px 0 6px;}
+.brand{font-size:2em;text-shadow:none;}
 .searchWrap{height:50px;}
 #search input[type="text"]{font-size:1.2em;padding:15px 4% 10px;}
-.filters td{padding:10px 8px 8px;}
+.filters td label{padding:10px 8px 8px;}
