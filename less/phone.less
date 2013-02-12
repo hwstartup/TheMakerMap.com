@@ -26,6 +26,22 @@ a.action-large.addResource {
 	display:none;
 }
 
+.searchWrap {
+	-webkit-box-shadow: 0 3px 0 0 #ccc;
+	box-shadow: 0 3px 0 0 #ccc;
+}
+
+.filterWrap {
+	position:relative;
+	z-index:2;
+	background:#112F49;
+}
+
+.filterWrap table {
+	-webkit-box-shadow: 0 3px 0 0 #ccc;
+	box-shadow: 0 3px 0 0 #ccc;
+}
+
 .searchWrap .searchIcon {
 	display:none;
 }
@@ -47,7 +63,7 @@ a.action-large.addResource {
 }
 
 .about p,.mapActions a.action {
-font-size: .8em;
+	font-size: .8em;
 }
 .menuToggle,.filterHeader .icon-caret-up {
 	display:block;
@@ -59,14 +75,13 @@ font-size: .8em;
 
 .header {
 	padding: 15px 0 10px;
+	padding:4px 0 6px;
 }
 
 .brand {
-	font-size: 1.5em;
+	font-size: 2em;
+	text-shadow:none;
 }
-
-
-
 
 .searchWrap {
 	height:50px;
@@ -75,4 +90,8 @@ font-size: .8em;
 #search input[type="text"] {
 	font-size: 1.2em;
 	padding: 15px 4% 10px;
+}
+
+.filters td label{
+	padding: 10px 8px 8px;
 }
